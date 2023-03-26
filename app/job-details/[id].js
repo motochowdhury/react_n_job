@@ -9,8 +9,21 @@ import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
 
 const JobDetails = () => {
+    const params = useSearchParams();
+    const router = useRouter();
+
+    const {data,isLoading, refetch, error } = useFetch('job-details', {
+        job_id: params.id
+    })
+
   return (
-    <Text>Hey this is Route</Text>
+    <SafeAreaView
+    style={{flex: 1, backgroundColor: COLORS.lightWhite}}
+    >
+      <Stack.Screen>
+        
+      </Stack.Screen>
+    </SafeAreaView>
   )
 }
 
