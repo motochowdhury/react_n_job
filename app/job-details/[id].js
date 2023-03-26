@@ -23,7 +23,24 @@ const JobDetails = () => {
       <Stack.Screen
       options={{
         headerStyle: {backgroundColor: COLORS.lightWhite},
-        headerShadowVisible: false
+        headerShadowVisible: false,
+        headerBackVisible: false,
+        headerTitle: '',
+        headerLeft: () => (
+          <ScreenHeaderBtn
+          iconUrl={icons.left}
+          dimension="60%"
+          handlePress={()=> router.back()}
+          >
+          </ScreenHeaderBtn>
+        ),
+        headerRight: () => (
+          <ScreenHeaderBtn
+          iconUrl={icons.share}
+          dimension="60%"
+          >
+          </ScreenHeaderBtn>
+        )
       }}
       >
 
