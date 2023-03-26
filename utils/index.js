@@ -5,3 +5,5 @@ export const checkImageURL = (url) => {
         return pattern.test(url);
     }
 };
+
+export default checkImageURL;
