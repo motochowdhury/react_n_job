@@ -74,6 +74,8 @@ const JobDetails = () => {
       </ScrollView>
       </>
     </SafeAreaView>
+
+    // Safe area view is very powerful tag
   )
 }
 
