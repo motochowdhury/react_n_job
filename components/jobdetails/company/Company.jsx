@@ -27,5 +27,3 @@ const Company = ({companyLogo, jobTitle, companyName, location}) => {
 }
 
 export default Company
-
-// will return tommorow
