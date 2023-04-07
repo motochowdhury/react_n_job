@@ -30,3 +30,4 @@ export default Company
 
 // Contributing now
 // Not Contribute yesterday
+// Ya allah give back mu productivity
