@@ -30,4 +30,5 @@ export default Company
 
 // Contributing now
 // Not Contribute yesterday
-// Ya allah give back mu productivity
+// 
+// I am actually a developer?
