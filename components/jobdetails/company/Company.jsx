@@ -31,4 +31,4 @@ export default Company
 // Contributing now
 // Not Contribute yesterday
 // 
-// I am actually a developer?
+
