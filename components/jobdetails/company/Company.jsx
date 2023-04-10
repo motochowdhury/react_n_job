@@ -28,7 +28,4 @@ const Company = ({companyLogo, jobTitle, companyName, location}) => {
 
 export default Company
 
-// Contributing now
-// Not Contribute yesterday
-// 
 
