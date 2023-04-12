@@ -8,7 +8,8 @@ import { Company, JobTabs, JobAbout, JobFooter, ScreenHeaderBtn, Specifics } fro
 import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
 
-const tabs = ["About", "Qualification", "Responsibilities"]
+const tabs = ["About", "Qualifications", "Responsibilities"]
+
 
 const JobDetails = () => {
     const params = useSearchParams();
@@ -21,6 +22,20 @@ const JobDetails = () => {
     const [refreshing,setRefreshing] = useState(false)
     const [activeTab,setActiveTab] = useState(tabs[0])
     const onRefresh = () => {};
+
+    const displayTabContent = () => {
+      switch (activeTab) {
+        case "Qualifications":
+          return <Specifics 
+          title = "Qualifications"
+          points = {data[0]._jobhighlights?.qualifications ?? ["N/A"]}
+          />
+        case "About" :
+        case "Responsibilities" :
+        default:
+          break;
+      }
+    }
 
   return (
     <SafeAreaView
@@ -76,6 +91,7 @@ const JobDetails = () => {
             activeTab = {activeTab}
             setActiveTab = {setActiveTab}
             />
+            {displayTabContent()}
           </View>
         )}
       </ScrollView>
