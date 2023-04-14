@@ -38,3 +38,5 @@ const NearbyJobCard = ({job, handleNavigate}) => {
 }
 
 export default NearbyJobCard;
+
+// commented
