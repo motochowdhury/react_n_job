@@ -1,12 +1,14 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text, View } from 'react-native'
 
+// Styles Components
 import styles from './specifics.style'
 
-const Specifics = () => {
+
+const Specifics = ({title,points}) => {
   return (
-    <View>
-      <Text>Specifics</Text>
+    <View style={styles.container}>
+      <Text style={styles.title} >{title}:</Text>
     </View>
   )
 }

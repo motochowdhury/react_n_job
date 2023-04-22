@@ -38,4 +38,3 @@ const Nearbyjobs = () => {
 
 export default Nearbyjobs;
 
-// todays commit
