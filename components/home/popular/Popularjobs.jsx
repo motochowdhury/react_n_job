@@ -1,15 +1,21 @@
-import {useState} from 'react'
-import { View, Text, TouchableOpacity, FlatList, ActivityIndicator  } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useState } from 'react';
+import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native';
 
-import styles from './popularjobs.style'
-import { COLORS,SIZES } from '../../../constants';
+import { COLORS, SIZES } from '../../../constants';
+import useFetch from '../../../hook/useFetch';
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
-import useFetch from '../../../hook/useFetch'
+import styles from './popularjobs.style';
 
 const Popularjobs = () => {
   const router = useRouter();
   const {data, isLoading, error} = useFetch('search', {query: 'React developer', num_pages: 1})
+
+const [selectedJob,setSelectedJob] = useState()
+const handleCardPress = (item) => {
+  router.push(`/job-details/${item.job_id}`);
+  setSelectedJob(item.job_id)
+}
 
   // console.log(data)
   return (
@@ -28,7 +34,10 @@ const Popularjobs = () => {
       ) : <FlatList 
       data={data}
       renderItem={({item})=>(
-        <PopularJobCard item={item} />
+        <PopularJobCard 
+        item={item}
+        handleCardPress={handleCardPress}
+        />
       )}
       keyExtractor={item => item?.job_id}
       contentContainerStyle={{columnGap: SIZES.medium}}

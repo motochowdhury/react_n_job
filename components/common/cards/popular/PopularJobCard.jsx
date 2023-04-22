@@ -1,8 +1,8 @@
-import React from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
-import styles from './popularjobcard.style'
-import {checkImageURL} from '../../../../utils';
+import { checkImageURL } from '../../../../utils';
+import styles from './popularjobcard.style';
 
 const PopularJobCard = ({item, selectedCard, handleCardPress}) => {
   return (
