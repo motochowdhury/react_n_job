@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { View, Text, TouchableOpacity, TextInput, FlatList, Image } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useState } from 'react';
+import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants';
+import styles from './welcome.style';
 
-const Welcome = () => {
+const Welcome = ({searchTerm, setSearchTerm, handleClick}) => {
   const router = useRouter()
   const jobTypes = ["Full-time", "Part-time", "Contractor", "Remote"]
   const [activeJobType, setActiveJobType] = useState("Full-time")
@@ -19,12 +19,12 @@ const Welcome = () => {
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
           <TextInput style={styles.searchInput}
-          value=""
-          onChange={()=>{}}
+          value={searchTerm}
+          onChange={(text)=>setSearchTerm(text)}
           placeholder="What are you looking for?"
            />
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={()=>{}} >
+        <TouchableOpacity style={styles.searchBtn} onPress={handleClick} >
             <Image source={icons.search} resizeMode="contain" style={styles.searchBtnImage} />
            </TouchableOpacity>
       </View>
