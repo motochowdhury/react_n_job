@@ -1,9 +1,8 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text, View } from 'react-native'
 
-import styles from './about.style'
 
-const About = () => {
+const About = ({info}) => {
   return (
     <View>
       <Text>About</Text>

@@ -1,11 +1,11 @@
-import { Text, View, SafeAreaView, ActivityIndicator, RefreshControl, ScrollView } from "react-native";
+import { ActivityIndicator, RefreshControl, SafeAreaView, ScrollView, Text, View } from "react-native";
 
-import { Stack, useRouter,useSearchParams } from "expo-router";
-import { useCallback, useState,  } from "react";
+import { Stack, useRouter, useSearchParams } from "expo-router";
+import { useState } from "react";
 
 // Local Import
-import { Company, JobTabs, JobAbout, JobFooter, ScreenHeaderBtn, Specifics } from "../../components";
-import { COLORS, icons, SIZES } from "../../constants";
+import { Company, JobAbout, JobTabs, ScreenHeaderBtn, Specifics } from "../../components";
+import { COLORS, SIZES, icons } from "../../constants";
 import useFetch from "../../hook/useFetch";
 
 const tabs = ["About", "Qualifications", "Responsibilities"]
@@ -28,9 +28,12 @@ const JobDetails = () => {
         case "Qualifications":
           return <Specifics 
           title = "Qualifications"
-          points = {data[0]._jobhighlights?.qualifications ?? ["N/A"]}
+          points = {data[0].job_highlights?.Qualifications ?? ["N/A"]}
           />
-        case "About" :
+        case "About" : 
+        return <JobAbout 
+        info = {data[0].job_description ?? "No Data provided"}
+        />
         case "Responsibilities" :
         default:
           break;
